@@ -11,7 +11,7 @@ const getCourseById = async (req, res, next) => {
   const { id } = req.params;
   const course = await CourseModel.findById(id).exec();
   if (!course) {
-    next(new DocumnetNotFoundError('Course', id));
+    next(new DocumnetNotFoundError("Course", id));
     return;
   }
   res.json(course);
